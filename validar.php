@@ -1,6 +1,5 @@
 <?php
 
-//funcoes em
 require_once 'functions.php';
 require_once 'conexao.php';
 
@@ -26,10 +25,9 @@ if (empty($usuario_digitado) || empty($senha_digitada)) {
 }
 
 // Acesso ao banco de dados e verificação de credenciais
-$conn = conectar_banco(); // Usa sua função conectar_banco()
+$conn = conectar_banco(); 
 
 // Prepara a consulta para buscar o usuário pelo login
-// Não buscamos a senha diretamente, pois vamos verificá-la com password_verify
 $sql = "SELECT id, login, senha FROM usuarios WHERE login = ?";
 $stmt = mysqli_prepare($conn, $sql);
 
@@ -38,8 +36,7 @@ if (!$stmt) { // Se ocorreu um erro ao preparar a consulta SQL
     exit;
 }
 
-// Realiza a associação (bind) do parâmetro (login) na consulta
-mysqli_stmt_bind_param($stmt, "s", $usuario_digitado); // 's' para string
+mysqli_stmt_bind_param($stmt, "s", $usuario_digitado); 
 
 // Executa a consulta
 if (!mysqli_stmt_execute($stmt)) { // Se retornou false, é porque ocorreu algum erro com o SQL
@@ -76,7 +73,6 @@ if (mysqli_stmt_num_rows($stmt) == 1) {
     exit;
 }
 
-// Fechar o statement e a conexão
 mysqli_stmt_close($stmt);
 mysqli_close($conn);
 
