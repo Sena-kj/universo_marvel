@@ -14,7 +14,7 @@
         // Inclui o arquivo de funções para quaisquer utilidades
         require_once 'functions.php';
         // Inclui o arquivo de conexão com o banco de dados
-        require_once 'conexao.php'; // Precisaremos dele para buscar os dados do item
+        require_once 'conexao.php'; 
     ?>
 
     <h1>Editar Item do seu Universo Marvel</h1>
@@ -30,9 +30,9 @@
 
     <?php
         // Chama a função para exibir mensagens de erro/sucesso baseadas em códigos
-        validar_codigo(); // Útil para exibir mensagens de validação (ex: campos em branco, item não encontrado, etc.)
+        validar_codigo(); 
 
-        // Lógica PHP para buscar e preencher os dados do item
+        // Lógica para buscar e preencher os dados do item
         $item_id = null;
         $titulo_item = '';
         $descricao_item = '';
@@ -50,13 +50,13 @@
 
             if ($stmt) {
                 // Associa os parâmetros da consulta
-                mysqli_stmt_bind_param($stmt, "ii", $item_id, $_SESSION['usuario_id']); // 'ii' para dois inteiros (id do item e id do usuário)
+                mysqli_stmt_bind_param($stmt, "ii", $item_id, $_SESSION['usuario_id']); 
 
                 // Executa a consulta
                 mysqli_stmt_execute($stmt);
                 mysqli_stmt_store_result($stmt); // Armazena o resultado da consulta
 
-                if (mysqli_stmt_num_rows($stmt) == 1) { // Verifica se encontrou exatamente 1 item
+                if (mysqli_stmt_num_rows($stmt) == 1) {// Verifica se encontrou exatamente 1 item
                     mysqli_stmt_bind_result($stmt, $titulo_item, $descricao_item, $usuario_id_do_item);
                     mysqli_stmt_fetch($stmt); // Obtém os resultados
 
@@ -68,19 +68,19 @@
                     }
                 } else {
                     // Item não encontrado ou não pertence ao usuário
-                    header('location:itens.php?codigo=item_nao_encontrado'); // Crie um código para isso em functions.php
+                    header('location:itens.php?codigo=item_nao_encontrado'); 
                     exit();
                 }
-                mysqli_stmt_close($stmt); // Fecha o statement
+                mysqli_stmt_close($stmt); 
             } else {
                 // Erro ao preparar a consulta
-                header('location:itens.php?codigo=erro_sql'); // Crie um código para erro de SQL
+                header('location:itens.php?codigo=erro_sql'); 
                 exit();
             }
-            mysqli_close($conn); // Fecha a conexão com o banco de dados 
+            mysqli_close($conn); 
         } else {
             // ID do item não fornecido na URL
-            header('location:itens.php?codigo=id_nao_fornecido'); // Crie um código para isso
+            header('location:itens.php?codigo=id_nao_fornecido'); 
             exit();
         }
     ?>
