@@ -10,9 +10,9 @@
 
     <?php
         // Inclui o arquivo lock.php para proteger a página
-        require_once 'lock.php'; // Adaptação do seu projeto base 
+        require_once 'lock.php'; 
         // Inclui o arquivo de funções para quaisquer utilidades
-        require_once 'functions.php'; // Adaptação do seu projeto base 
+        require_once 'functions.php'; 
     ?>
 
     <h1>Bem-vindo(a) ao seu Universo Marvel!</h1>
