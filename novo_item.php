@@ -28,7 +28,7 @@
 
     <?php
         // Chama a função para exibir mensagens de erro/sucesso baseadas em códigos
-        validar_codigo(); // Útil para exibir mensagens de validação (ex: campos em branco)
+        validar_codigo();
     ?>
 
     <form action="processa_novo_item.php" method="post">
