@@ -29,13 +29,13 @@ if (!$stmt_verificar) {
     exit;
 }
 
-mysqli_stmt_bind_param($stmt_verificar, "ii", $item_id, $usuario_id_logado); // 'ii' para dois inteiros
+mysqli_stmt_bind_param($stmt_verificar, "ii", $item_id, $usuario_id_logado); 
 mysqli_stmt_execute($stmt_verificar);
 mysqli_stmt_store_result($stmt_verificar);
 
 if (mysqli_stmt_num_rows($stmt_verificar) == 0) {
     // Item não encontrado ou não pertence ao usuário logado
-    header('location:itens.php?codigo=item_nao_permitido_exclusao'); // Novo código para acesso negado à exclusão
+    header('location:itens.php?codigo=item_nao_permitido_exclusao'); 
     exit;
 }
 mysqli_stmt_close($stmt_verificar);
@@ -45,21 +45,21 @@ $sql_excluir = "DELETE FROM itens WHERE id = ?";
 $stmt_excluir = mysqli_prepare($conn, $sql_excluir);
 
 if (!$stmt_excluir) {
-    header('location:itens.php?codigo=4'); // Código 4: erro de SQL
+    header('location:itens.php?codigo=4'); 
     exit;
 }
 
-mysqli_stmt_bind_param($stmt_excluir, "i", $item_id); // 'i' para integer
+mysqli_stmt_bind_param($stmt_excluir, "i", $item_id); 
 
 if (!mysqli_stmt_execute($stmt_excluir)) {
-    header('location:itens.php?codigo=4'); // Código 4: erro de SQL
+    header('location:itens.php?codigo=4'); 
     exit;
 }
 
 // Redirecionar para a página de listagem de itens com mensagem de sucesso
 header('location:itens.php?codigo=item_excluido_sucesso'); // Novo código para sucesso
 
-// Fechar o statement e a conexão
+
 mysqli_stmt_close($stmt_excluir);
 mysqli_close($conn);
 
