@@ -1,0 +1,297 @@
+/* css/estilo.css */
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5; /* Um cinza claro */
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #cc0000; /* Vermelho Marvel */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.4em;
+}
+
+/* Navegação */
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: #333; /* Fundo escuro para a nav */
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Formulários */
+form p {
+    margin-bottom: 15px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form textarea {
+    width: calc(100% - 22px); /* 100% menos padding e border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura total */
+}
+
+form textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+form button[type="submit"] {
+    background-color: #cc0000; /* Vermelho Marvel */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Botão de largura total */
+}
+
+form button[type="submit"]:hover {
+    background-color: #a00000; /* Vermelho mais escuro no hover */
+}
+
+/* Links */
+a {
+    color: #cc0000;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Mensagens de feedback (do validar_codigo) */
+h3 {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Mensagens de sucesso (ex: cadastro_sucesso, item_cadastrado_sucesso) */
+h3:contains('sucesso') { /* Isso é um seletor CSS, mas a aplicação real depende de como o PHP gera a div */
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Mensagens de erro (ex: usuario_ou_senha_invalidos, campos_em_branco) */
+h3:not(:contains('sucesso')) { /* Exemplo: se não contém 'sucesso', é erro ou info */
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ATENÇÃO: O PHP gera <H3> diretamente. Para CSS, você pode adicionar classes.
+   Exemplo: em functions.php, ao invés de `echo $msg;`, use:
+   `echo "<h3 class='mensagem-$tipo'>{$texto}</h3>";`
+   E defina $tipo como 'sucesso' ou 'erro'
+   Assim você pode ter:
+   .mensagem-sucesso { background-color: #d4edda; ... }
+   .mensagem-erro { background-color: #f8d7da; ... }
+*/
+
+
+/* Estilos para a lista de itens */
+.itens-lista {
+    margin-top: 30px;
+    display: grid; /* Usar Grid para layout responsivo de cards */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 280px mínimo, 1fr para expandir */
+    gap: 20px; /* Espaço entre os cards */
+}
+
+.item-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease-in-out;
+}
+
+.item-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+}
+
+.item-card h3 {
+    color: #cc0000;
+    margin-top: 0;
+    font-size: 1.5em;
+    text-align: left; /* Alinhar título do card à esquerda */
+}
+
+.item-card p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.item-acoes {
+    margin-top: 15px;
+    display: flex; /* Flexbox para alinhar botões de ação */
+    gap: 10px;
+}
+
+.item-acoes a {
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.item-acoes a[href*="editar_item"] { /* Para links de edição */
+    background-color: #007bff; /* Azul para editar */
+    color: white;
+}
+
+.item-acoes a[href*="editar_item"]:hover {
+    background-color: #0056b3;
+}
+
+.item-acoes a[href*="excluir_item"] { /* Para links de exclusão */
+    background-color: #dc3545; /* Vermelho para excluir */
+    color: white;
+}
+
+.item-acoes a[href*="excluir_item"]:hover {
+    background-color: #c82333;
+}
+
+.no-items {
+    text-align: center;
+    color: #777;
+    font-style: italic;
+    margin-top: 50px;
+}
+
+.add-new-item-link {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.add-new-item-link a {
+    background-color: #28a745; /* Verde para adicionar */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.add-new-item-link a:hover {
+    background-color: #218838;
+}
+
+/* Estilos de Rodapé */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 0.9em;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    form input[type="text"],
+    form input[type="password"],
+    form input[type="email"],
+    form textarea {
+        width: 100%;
+    }
+
+    .itens-lista {
+        grid-template-columns: 1fr; /* Em telas menores, 1 coluna */
+    }
+
+    .mensagem {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.mensagem.sucesso {
+    background-color: #d4edda; /* Verde claro */
+    color: #155724; /* Verde escuro */
+    border: 1px solid #c3e6cb;
+}
+
+.mensagem.erro {
+    background-color: #f8d7da; /* Vermelho claro */
+    color: #721c24; /* Vermelho escuro */
+    border: 1px solid #f5c6cb;
+}
+}

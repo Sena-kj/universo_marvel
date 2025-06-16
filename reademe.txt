@@ -1,0 +1,83 @@
+KAUUAN DE JESUS SENA SOUZA
+JOAO VICTOR CORREA LIMA
+
+
+PROJETO FINAL DE PHP: SEU UNIVERSO MARVEL PESSOAL
+
+Seja muito bem-vindo(a) ao seu espaço digital para organizar tudo do incrível Universo Marvel! Este projeto foi feito para você ter um controle fácil sobre seus filmes, quadrinhos, personagens favoritos ou qualquer item que a sua paixão pela Marvel colecione.
+
+Aqui, você pode:
+Criar sua conta: Um cantinho só seu nesse vasto universo.
+Logar: Acessar sua galeria pessoal de itens.
+Adicionar novos itens: Registre cada nova aquisição ou descoberta do mundo Marvel.
+Visualizar seus itens: Veja tudo o que você já cadastrou, organizadinho.
+Editar detalhes: Mudou de ideia sobre a descrição de um item? Sem problemas, edite à vontade!
+Excluir: Aquele item não faz mais sentido? Remova-o facilmente.
+Sair com segurança: Sempre que quiser, sua sessão é encerrada com um clique.
+
+------------------------------------------------------------------------------------------
+
+O QUE USAMOS PARA CONSTRUIR ISSO?
+
+Este cantinho da Marvel foi construído com algumas das ferramentas mais comuns do desenvolvimento web:
+PHP: A linguagem que faz a mágica acontecer por trás dos panos.
+MySQL: Onde todos os seus preciosos dados do Universo Marvel são guardados.
+HTML: A estrutura base de cada página que você vê.
+CSS: Para deixar tudo com uma cara legal e, claro, com as cores vibrantes da Marvel!
+XAMPP: Nosso "quartel-general" local para rodar o PHP e o MySQL no seu computador.
+VS Code: Onde cada linha de código ganhou vida!
+
+-----------------------------------------------------------------------------------------
+
+COMO ESTÁ ORGANIZADO?
+
+Para você se achar por aqui, a estrutura de pastas é bem simples:
+
+/seuprojeto/ (Essa é a pasta principal que você vai mover)
+├── style.css            (Aqui mora a beleza do projeto!)
+├── conexao.php             (Nosso "telefone" para o banco de dados)
+│── functions.php           (Várias "ferramentas" que facilitam a vida do código)
+├── criar_banco.sql         (O "manual de instruções" para criar o banco de dados)
+├── index.php                   (A porta de entrada: sua tela de login)
+├── cadastro.php                (Para criar sua nova identidade Marvel)
+├── dashboard.php               (Seu painel de controle após o login)
+├── itens.php                   (Sua galeria com todos os seus itens)
+├── novo_item.php               (Formulário para adicionar aquele novo item incrível)
+├── editar_item.php             (Para dar um trato nos detalhes dos seus itens)
+├── excluir_item.php            (O botão de "sumir com" um item)
+├── lock.php                    (O "segurança" que protege suas páginas)
+├── logout.php                  (Para sair em segurança)
+├── processa_cadastro.php       (A "recepcionista" do cadastro)
+├── processa_edicao_item.php    (O "ajustador" de itens)
+├── processa_novo_item.php      (O "registrador" de novos itens)
+├── validar.php                 (O "porteiro" que verifica seu login)
+└── README.txt                  (Este guia que você está lendo!)
+
+-----------------------------------------------------------------------------------------
+
+Para ter seu Universo Marvel pessoal rodando no seu computador:
+
+1.XAMPP:
+ Abra o painel de controle do XAMPP.
+ Certifique-se de que os módulos Apache (o servidor web) e MySQL (o banco de dados) estão verdinhos, ou seja, iniciados!
+
+2.  Traga o Projeto para Casa:
+ Pegue esta pasta inteira do projeto (tipo, "universo_marvel") e coloque-a dentro do diretório `htdocs` do seu XAMPP.
+ Exemplo de caminho: `C:\xampp\htdocs\universo_marvel\`
+
+3.  Monte o Banco de Dados (A Parte Mais Importante!):
+ Abra seu navegador favorito e vá para o phpMyAdmin (geralmente `http://localhost/phpmyadmin/`).
+ Lá, clique na aba 'SQL' (é como se fosse um console de comandos do banco de dados).
+ Agora, abra o arquivo `sql/criar_banco.sql` que está dentro da pasta do seu projeto.
+    Copie TODO o conteúdo desse arquivo.
+ Cole o conteúdo na caixa de texto do phpMyAdmin e clique no botão 'Executar' (ou 'Go').
+ Pronto! Seu banco de dados 'universo_marvel' e as tabelas 'usuarios' e 'itens' estarão criados e prontos para receber seus dados.
+
+ OU da maneira mais facil, depois de ter baixado as pastas, clique para importar e clique na pasta "criar_banco.sql
+
+4.  Acesse seu Universo Marvel!
+ No seu navegador, digite esta URL: `http://localhost/universo_marvel/` (se você mudou o nome da pasta em htdocs, use o novo nome aqui)
+
+--------------------------------------------------------------------------------------------------------
+
+Eu até que iria criar um usuario, teste, mas é muito simples e funcional a parte de criaçao, entao, crie quando for testar e utiliza, valeu
