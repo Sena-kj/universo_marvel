@@ -40,7 +40,7 @@ function validar_codigo() {
                 $msg = "<h3>Ocorreu um erro ao acessar o banco de dados. Por favor, tente novamente mais tarde.</h3>";
                 $tipo_mensagem = 'erro';
                 break;
-            // Novos códigos e seus tipos:
+            
             case 'senhas_nao_conferem':
                 $msg = "<h3>As senhas digitadas não conferem. Por favor, tente novamente.</h3>";
                 $tipo_mensagem = 'erro';
@@ -93,7 +93,7 @@ function validar_codigo() {
                 $msg = "<h3>Ocorreu um erro desconhecido.</h3>";
                 $tipo_mensagem = 'info';
         }
-        // Adiciona a classe da mensagem dinamicamente
+        
         echo "<h3 class='mensagem {$tipo_mensagem}'>{$msg}</h3>";
     }
 }
