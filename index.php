@@ -17,10 +17,10 @@
 
     <?php
         // Incluir o arquivo de funções para usar validar_codigo()
-        require_once 'functions.php'; // Adaptação do seu projeto base 
+        require_once 'functions.php'; 
 
         // Chama a função para exibir mensagens de erro/sucesso baseadas em códigos
-        validar_codigo(); // Adaptação do seu projeto base 
+        validar_codigo();
     ?>
 
     <h2>Para acessar as aventuras da Marvel, informe seus dados:</h2>
