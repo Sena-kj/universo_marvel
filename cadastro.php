@@ -16,10 +16,10 @@
     </nav>
 
     <?php
-        // Incluir o arquivo de funções para usar validar_codigo()
+      
         require_once 'functions.php';
 
-        // Chama a função para exibir mensagens de erro/sucesso baseadas em códigos
+      
         validar_codigo();
     ?>
 
